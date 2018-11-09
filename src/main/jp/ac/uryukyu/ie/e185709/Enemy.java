@@ -1,5 +1,13 @@
 package jp.ac.uryukyu.ie.e185709;
 
+/**
+ * 敵クラス。
+ *  String name; //敵の名前
+ *  int hitPoint; //敵のHP
+ *  int attack; //敵の攻撃力
+ *  boolean dead; //敵の生死状態。true=死亡。
+ * Created by tnal on 2016/11/13.
+ */
 public class Enemy {
     String name;
     int hitPoint;
@@ -38,9 +46,11 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
-        int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
-        hero.wounded(damage);
+        if(dead == false) {
+            int damage = (int) (Math.random() * attack);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
+            hero.wounded(damage);
+        }
     }
 
     /**
