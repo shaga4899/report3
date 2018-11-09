@@ -16,7 +16,6 @@ public class EnemyTest {
         enemy.dead = true;
         for(int i=0; i<10; i++) {
             enemy.attack(hero); //乱数で0ダメージとなることもあるため、複数回実行してみる。
-            System.out.print(i);
         }
 
         assertEquals(heroHP, hero.hitPoint);
