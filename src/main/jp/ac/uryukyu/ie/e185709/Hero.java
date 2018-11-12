@@ -1,5 +1,6 @@
 package jp.ac.uryukyu.ie.e185709;
 
+
 /**
  * ヒーロークラス。
  *  String name; //敵の名前
@@ -8,7 +9,7 @@ package jp.ac.uryukyu.ie.e185709;
  *  boolean dead; //敵の生死状態。true=死亡。
  * Created by tnal on 2016/11/13.
  */
-public class Hero extends LivingThing {
+class Hero extends LivingThing {
 
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
@@ -16,12 +17,12 @@ public class Hero extends LivingThing {
      * @param maximumHP ヒーローのHP
      * @param attack ヒーローの攻撃力
      */
-    public Hero (String name, int maximumHP, int attack) {
+    Hero (String name, int maximumHP, int attack) {
         super(name,maximumHP,attack);
     }
 
     @Override
-    public void wounded(int damage){
+    void wounded(int damage){
         hitpointSetter(damage);
         if( hitpointGetter() < 0 ) {
             deadSetter(true);
